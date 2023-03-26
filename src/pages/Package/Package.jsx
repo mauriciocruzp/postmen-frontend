@@ -17,13 +17,10 @@ function Package() {
 
     const validationSchema = Yup.object({
         weight: Yup.string()
-            .weight('Campo vacío')
             .required('Campo vacío'),
         height: Yup.string()
-            .height('Campo vacío')
             .required('Campo vacío'),
         width: Yup.string()
-            .width('Campo vacío')
             .required('Campo vacío'),
     });
 
