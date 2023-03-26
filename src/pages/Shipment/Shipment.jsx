@@ -20,22 +20,16 @@ function Shipment () {
 
     const validationSchema = Yup.object({
         address: Yup.string()
-            .address('Campo vacío')
             .required('Campo vacío'),
         city: Yup.string()
-            .city('Campo vacío')
             .required('Campo vacío'),
         state: Yup.string()
-            .state('Campo vacío')
             .required('Campo vacío'),
         postalCode: Yup.string()
-            .postalCode('Campo vacío')
             .required('Campo vacío'),
         shipTo: Yup.string()
-            .address('Campo vacío')
             .required('Campo vacío'),
         associatedEmail: Yup.string()
-            .associatedEmail('Campo vacío')
             .required('Campo vacío'),
     });
 
