@@ -7,6 +7,7 @@ import Input from "../../components/Input/Input";
 import TextError from "../../components/TextError/TextError";
 
 function Shipment () {
+
     const navigate = useNavigate();
 
     const initialValues = {
@@ -32,7 +33,7 @@ function Shipment () {
             .postalCode('Campo vacío')
             .required('Campo vacío'),
         shipTo: Yup.string()
-            .address('Campo vacío')
+            .shipTo('Campo vacío')
             .required('Campo vacío'),
         associatedEmail: Yup.string()
             .associatedEmail('Campo vacío')
