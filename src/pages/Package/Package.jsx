@@ -2,6 +2,7 @@ import {Formik} from "formik";
 import {useNavigate} from "react-router-dom";
 import * as Yup from "yup";
 import Button from "../../components/Button/Button";
+import SecondaryButton from "../../components/Button/SecondaryButton";
 import Header from "../../containers/Header/Header";
 import Input from "../../components/Input/Input";
 import TextError from "../../components/TextError/TextError";
@@ -55,7 +56,7 @@ function Package() {
                 }) => (
                     <div className="container mx-auto mt-32">
                         <div className="grid grid-cols-12 gap-x-4">
-                            <div className="col-span-10 col-start-2">
+                            <div className="col-span-8 col-start-3">
                                 <h1 className="pb-2 text-4xl text-left w-full font-bold my-3">Información del paquete</h1>
                                 <h3 className="pb-2 text-left w-full font-light">Rellene todos los campos para proceder con el envío del paquete y completar la orden</h3>
                                 <form onSubmit={handleSubmit}>
@@ -91,7 +92,7 @@ function Package() {
                                     </div>
                                     <div className="my-6 w-full flex flew-row space-x-1">
                                         <Button type="submit" width="w-1/2">Siguiente</Button>
-                                        <Button className="primary-purple" type="submit" width="w-1/2">Cancelar</Button>
+                                        <SecondaryButton className="primary-purple" type="submit" width="w-1/2">Cancelar</SecondaryButton>
                                     </div>
                                 </form>
                             </div>
