@@ -1,5 +1,5 @@
-import {Formik} from "formik";
-import {useNavigate} from "react-router-dom";
+import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import Button from "../../components/Button/Button";
 import Header from "../../containers/Header/Header";
@@ -16,12 +16,12 @@ function Home() {
 
     const validationSchema = Yup.object({
         trackingId: Yup.string()
-            .min('El número de rastreo debe contener 14 caracteres')
-            .max('El número de rastreo debe tener 14 caracteres')
+            .min(14, "El numero de rastreo debe contener 14 caracteres")
+            .max(14, "El numero de rastreo debe contener 14 caracteres")
             .required('Se necesita un número de rastreo'),
     });
 
-    async function handleSubmit(values){
+    async function handleSubmit(values) {
         /*
         const response = await (values.trackingId);
 
@@ -44,7 +44,7 @@ function Home() {
                         validationSchema={validationSchema}
                         onSubmit={handleSubmit}
                     >
-                        { ({
+                        {({
                             values,
                             errors,
                             touched,
@@ -54,15 +54,17 @@ function Home() {
                         }) => (
                             <div className="flex flex-col">
                                 <form onSubmit={handleSubmit}>
-                                    <div className="w-full flex flex-row space-x-1">
+                                    <div className="w-full flex flex-col items-center space-x-1">
                                         <Input className='w-3/4' type='text' name='trackingId' placeholder='Número de rastreo'
                                             value={values.trackingId}
                                             handleChange={handleChange}
                                             handleBlur={handleBlur}
                                         />
-                                        {errors.trackingId && touched.trackingId && (
-                                            <TextError>{errors.trackingId}</TextError>
-                                        )}
+                                        <div className="h-6">
+                                            {errors.trackingId && touched.trackingId && (
+                                                <TextError>{errors.trackingId}</TextError>
+                                            )}
+                                        </div>
                                         <Button type='submit' width='w-1/4' >Buscar</Button>
                                     </div>
                                 </form>
@@ -70,7 +72,7 @@ function Home() {
                         )}
                     </Formik>
                 </div>
-                <div className="container bg-gray-300 my-3 col-span-10 col-start-2 border-3">
+                <div className="container bg-gray-300 my-3 col-span-10 col-start-2 border-3 rounded-2xl">
                     <div className="w-full p-2">
                         <h1 className="pb-2 text-4xl text-left w-full font-bold mx-12 mt-2 mb-8">Orden No. ##############</h1>
                         <h2 className="pb-2 text-4xl text-left w-full font-bold mx-12 my-2">Actualizaciones</h2>
@@ -101,12 +103,12 @@ function Home() {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="bg-gray-400 col-span-3 col-start-8 h-52 w-72 mr-36">
                                 <h2 className="text-left font-semibold mx-3 my-2">Dirección de envío</h2>
                                 <p className="mx-3 my-2">Eduardo Sebastián Hernández</p>
-                                <p className="mx-3 my-2">Privada Oaxaca Manzana 23 <br/>Lote 17 Col. Las Granjas</p>
-                                <p className="mx-3 my-2">Tuxtla Gutiérrez, Chiapas <br/>29019</p>
+                                <p className="mx-3 my-2">Privada Oaxaca Manzana 23 <br />Lote 17 Col. Las Granjas</p>
+                                <p className="mx-3 my-2">Tuxtla Gutiérrez, Chiapas <br />29019</p>
                             </div>
                         </div>
                     </div>
