@@ -5,6 +5,7 @@ import Button from "../../components/Button/Button";
 import Header from "../../containers/Header/Header";
 import Input from "../../components/Input/Input";
 import TextError from "../../components/TextError/TextError";
+import Footer from "../../containers/Footer/Footer";
 
 function Home() {
 
@@ -114,6 +115,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 
