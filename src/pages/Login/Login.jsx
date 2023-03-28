@@ -4,9 +4,19 @@ import TextError from "../../components/TextError/TextError";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import useAuth from "../../hooks/useAuth";
 import Header from "../../containers/Header/Header";
+import { signIn } from "../../api/services/auth";
 
 function Login() {
+    const { setAccessToken, authState } = useAuth();
+
+  useEffect(() => {
+    if (authState.accessToken) {
+      navigate('/');
+    }
+  }, []);
 
     const navigate = useNavigate();
 
@@ -23,16 +33,17 @@ function Login() {
     });
 
     async function handleSubmit(values) {
-        // const response = await signIn(values.email, values.password);
+        const response = await signIn(values.email, values.password);
+        console.log(response);
 
-        // if (response.status === 200) {
-        //     setAccessToken(response.data.data.accessToken);
-        //     alert('Inicio de sesion exitoso');
-        //     navigate('/');
-        //     return;
-        // }
+        if (response.status === 200) {
+            setAccessToken(response.data.token);
+            alert('Inicio de sesion exitoso');
+            navigate('/');
+            return;
+        }
 
-        // alert('Usuario o contraseña incorrectos');
+        alert('Usuario o contraseña incorrectos');
     }
     return (
         <>
