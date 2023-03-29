@@ -179,7 +179,7 @@ function Home() {
                   >
                     Descargar guía de orden
                   </a>
-                  
+
                 </div>
               </div>
               {authState.user.roles.includes("ADMIN") && (
@@ -199,7 +199,7 @@ function Home() {
                     type="submit"
                     width="w-1/4"
                     isDisabled={
-                      data.status.name === "IN_PROGRESS" ||
+                      data.status.name === "RECEIVED" ||
                       data.status.name === "DELIVERED"
                     }
                     onClick={handleFinishDelivery}
