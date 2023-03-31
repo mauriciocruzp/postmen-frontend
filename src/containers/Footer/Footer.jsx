@@ -8,9 +8,9 @@ function Footer() {
                 <img src={MinLogo} alt="" />
                 <p className="ml-4">© 2023 Postmen, Inc.</p>
             </div>
-            <div className="col-span-2 col-start-11 flex items-center">
+            {/* <div className="col-span-2 col-start-11 flex items-center">
                 <Link to="/users/sign_in" className="text-gray-400">Iniciar sesión</Link>
-            </div>
+            </div> */}
         </div>
     );
 }
