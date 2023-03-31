@@ -171,11 +171,10 @@ function Home() {
                     <br />
                     {data.postalCode}
                   </p>
-                  {/* download file from data.orderGuideUrl */}
                   <a
                     href={data.orderGuideUrl}
-                    download="orderGuide.pdf"
-                    className="mx-3 my-2"
+                    target="_blank"
+                    className="mx-3 my-2 underline"
                   >
                     Descargar guía de orden
                   </a>
