@@ -140,7 +140,7 @@ function Home() {
               <h2 className="pb-2 text-4xl text-left w-full font-bold mx-12 my-2">
                 Actualizaciones
               </h2>
-              <div className="flex flex-row justify-between">
+              <div className="mb-6 flex flex-row justify-between">
                 <div className="flex flex-col">
                   {data.events.map((event) => (
                     <>
