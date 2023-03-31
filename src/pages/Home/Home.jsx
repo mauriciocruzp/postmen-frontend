@@ -89,7 +89,7 @@ function Home() {
   return (
     <>
       <Header />
-      <div className="container mx-auto mt-5 grid grid-cols-12 gap-x-4">
+      <div className="container min-h-screen mx-auto mt-5 grid grid-cols-12 gap-x-4">
         <div className="flex flex-col col-span-4 col-start-5">
           <Formik
             initialValues={initialValues}
@@ -131,8 +131,8 @@ function Home() {
           </Formik>
         </div>
 
-        <div className="container bg-gray-300 my-3 col-span-10 col-start-2 border-3 rounded-2xl">
-          {data && (
+        {data && (
+          <div className="container bg-gray-300 my-3 col-span-10 col-start-2 border-3 rounded-2xl">
             <div className="w-full p-2">
               <h1 className="pb-2 text-4xl text-left w-full font-bold mx-12 mt-2 mb-8">
                 Orden No. {data.trackingId}
@@ -209,8 +209,8 @@ function Home() {
                 </div>
               )}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <Footer />
