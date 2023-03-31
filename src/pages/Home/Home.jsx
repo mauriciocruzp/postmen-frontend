@@ -181,7 +181,7 @@ function Home() {
 
                 </div>
               </div>
-              {authState.user.roles.includes("ADMIN") && (
+              {authState.user?.roles.includes("ADMIN") && (
                 <div className="flex flex-row justify-around">
                   <Button
                     type="submit"
