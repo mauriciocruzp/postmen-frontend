@@ -21,6 +21,10 @@ export async function endDelivery(trackingId) {
     const response = await axiosAPIBridgeInstance.post("/event/order/finish-delivery", {
       type: "FINISH_DELIVERY",
       trackingId,
+    }, {
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem("accessToken")}`,
+      }
     });
     return response;
   } catch (error) {
