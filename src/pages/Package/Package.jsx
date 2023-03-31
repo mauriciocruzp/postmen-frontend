@@ -115,7 +115,7 @@ function Package() {
                     )}
                   </div>
                   <div className="my-6 w-full flex flew-row space-x-1">
-                      <Button type="submit" width="w-full">
+                      <Button type="submit" width="w-1/2">
                         Siguiente
                       </Button>
                     <SecondaryButton
